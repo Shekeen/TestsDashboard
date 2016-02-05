@@ -1,0 +1,18 @@
+{% extends "bootstrap3/bootstrap3.html" %}
+
+{% block bootstrap3_title %}
+    Status page
+{% endblock %}
+
+{% block bootstrap3_content %}
+    <h1>Tests</h1>
+{% for test_status in statuses %}
+    <div>
+        <span>{{ test_status.test_name }}</span>
+        <span>{{ test_status.short_description }}</span>
+        <span>{{ test_status.comment }}</span>
+    </div>
+{% empty %}
+    <div>No tests found.</div>
+{% endfor %}
+{% endblock %}
